@@ -1,12 +1,12 @@
 Postcss filter
 ===================
 
-This is a fork of [cssnext](https://github.com/postcss/cssnext)
-All credits goes to  [cssnext](https://github.com/postcss/cssnext)
+This is a fork of [autoprefixer](https://github.com/netzmacht/assetic-autoprefixer).
+All credits goes to  utoprefixer](https://github.com/netzmacht/assetic-autoprefixer)
 
-It adds a cssnext filter for the [PHP assetic framework](https://github.com/kriswallsmith/assetic).
-The project is called Postcss as it could implement all the postcss module.
-As i am new with postcss I have decided to start with cssnext which includes many postcss modules.
+It adds a [cssnext](https://github.com/cssnext/cssnext) filter for the [PHP assetic framework](https://github.com/kriswallsmith/assetic).
+The project is called Postcss as it could implement each postcss filter.
+As I am new with postcss I am starting with [cssnext](https://github.com/cssnext/cssnext) which includes many postcss modules.
 
 Requirements
 ------------
