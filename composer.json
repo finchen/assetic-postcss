@@ -1,0 +1,47 @@
+{
+    "name": "finchen/assetic-postcss",
+    "description": "postcss-php filter for kriswallsmith/assetic",
+    "keywords": [
+        "assets",
+        "css",
+        "vendor-prefix"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antoine",
+            "email": "frenchie.dev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "info@netzmacht.de",
+        "issues": "ttps://github.com/finchen/assetic-postcss/issues",
+        "wiki": "ttps://github.com/finchen/assetic-postcss/wiki",
+        "source": "ttps://github.com/finchen/assetic-postcss"
+    },
+    "require": {
+        "php": ">=5.3",
+        "kriswallsmith/assetic": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7",
+        "squizlabs/php_codesniffer": "~1.0",
+        "phpmd/phpmd": "~2.0"
+    },
+    "replace": {
+        "bit3/assetic-postcss": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bit3\\Assetic\\Filter\\Cssnext\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev",
+            "dev-develop": "1.1.x-dev"
+        }
+    }
+}
