@@ -1,6 +1,6 @@
 {
     "name": "finchen/assetic-postcss",
-    "description": "postcss-php filter for kriswallsmith/assetic",
+    "description": "postcss-php filters for kriswallsmith/assetic",
     "keywords": [
         "assets",
         "css",
@@ -16,7 +16,7 @@
         }
     ],
     "support": {
-        "email": "info@netzmacht.de",
+        "email": "frenchie.dev@gmail.com",
         "issues": "ttps://github.com/finchen/assetic-postcss/issues",
         "wiki": "ttps://github.com/finchen/assetic-postcss/wiki",
         "source": "ttps://github.com/finchen/assetic-postcss"
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Bit3\\Assetic\\Filter\\Cssnext\\": "src/"
+            "Bit3\\Assetic\\Filter\\Postcss\\": "src/"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev",
-            "dev-develop": "1.1.x-dev"
+            "dev-develop": "1.0.x-dev"
         }
     }
 }
