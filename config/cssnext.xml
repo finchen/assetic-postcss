@@ -9,6 +9,7 @@
         <parameter key="assetic.filter.cssnext.bin">%assetic.cssnext.bin%</parameter>
         <parameter key="assetic.filter.cssnext.node">%assetic.node.bin%</parameter>
         <parameter key="assetic.filter.cssnext.timeout">null</parameter>
+        <parameter key="assetic.filter.cssnext.options">--compress</parameter>
     </parameters>
 
     <services>
@@ -16,6 +17,7 @@
             <tag name="assetic.filter" alias="cssnext" />
             <argument>%assetic.filter.cssnext.bin%</argument>
             <argument>%assetic.filter.cssnext.node%</argument>
+            <argument>%assetic.filter.cssnext.options%</argument>
             <call method="setTimeout"><argument>%assetic.filter.cssnext.timeout%</argument></call>
         </service>
     </services>

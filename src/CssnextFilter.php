@@ -34,23 +34,18 @@ class CssnextFilter extends BaseNodeFilter
     protected $nodeBin;
 
     /**
-     * Create nice visual cascade of prefixes.
+     * Option(s) concatened after the $moduleBin
+     * This is very (too) permissive. We will review once we know more about postCss module.
      *
-     * @var bool
+     * @var string
      */
-    protected $cascade = true;
+    protected $moduleOptions;
 
-    /**
-     * Try to fix CSS syntax errors.
-     *
-     * @var bool
-     */
-    protected $safe = false;
-
-    public function __construct($moduleBin = '/usr/bin/cssnext', $nodeBin = null)
+    public function __construct($moduleBin = '/usr/bin/cssnext', $nodeBin = null, $options = '')
     {
         $this->moduleBin = $moduleBin;
         $this->nodeBin = $nodeBin;
+        $this->moduleOptions = $options;
     }
 
     /**
@@ -102,54 +97,6 @@ class CssnextFilter extends BaseNodeFilter
     }
 
     /**
-     * Determine if create nice visual cascade of prefixes is enabled.
-     *
-     * @return bool
-     */
-    public function isCascade()
-    {
-        return $this->cascade;
-    }
-
-    /**
-     * Set create nice visual cascade of prefixes.
-     *
-     * @param bool $cascade
-     *
-     * @return static
-     */
-    public function setCascade($cascade)
-    {
-        $this->cascade = (bool) $cascade;
-
-        return $this;
-    }
-
-    /**
-     * Determine if try to fix CSS syntax errors is enabled.
-     *
-     * @return bool
-     */
-    public function isSafe()
-    {
-        return $this->safe;
-    }
-
-    /**
-     * Set try to fix CSS syntax errors.
-     *
-     * @param bool $safe
-     *
-     * @return static
-     */
-    public function setSafe($safe)
-    {
-        $this->safe = (bool) $safe;
-
-        return $this;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function filterLoad(AssetInterface $asset)
@@ -163,14 +110,8 @@ class CssnextFilter extends BaseNodeFilter
             $processBuilder->setPrefix($this->nodeBin);
         }
 
-        // disable cascade
-        if (!$this->isCascade()) {
-            $processBuilder->add('--no-cascade');
-        }
-        // enable safe mode
-        if ($this->isSafe()) {
-            $processBuilder->add('--safe');
-        }
+        // options (eg. cssnext --compress --verbose)
+        $processBuilder->add($this->moduleOptions);
 
         // input file
         $processBuilder->add($input);

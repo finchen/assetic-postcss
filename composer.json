@@ -4,7 +4,7 @@
     "keywords": [
         "assets",
         "css",
-        "vendor-prefix"
+        "postcss"
     ],
     "type": "library",
     "license": "MIT",
