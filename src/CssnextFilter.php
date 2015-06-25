@@ -111,7 +111,7 @@ class CssnextFilter extends BaseNodeFilter
         }
 
         // options (eg. cssnext --compress --verbose)
-        $processBuilder->add($this->moduleOptions);
+        //$processBuilder->add($this->moduleOptions);
 
         // input file
         $processBuilder->add($input);
